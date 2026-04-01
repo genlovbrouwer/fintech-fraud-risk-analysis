@@ -1,0 +1,2 @@
+total_transactions	total_transaction_value	total_fraud_count	total_fraud_value	fraud_rate_pct	fraud_value_rate_pct	top_risk_transaction_type
+6362620	1144392944759.7686	8213	12056415427.840006	0.1291	1.0535	TRANSFER

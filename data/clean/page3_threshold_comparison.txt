@@ -1,0 +1,4 @@
+threshold_name	flagged_transactions	flagged_value	fraud_captured_count	fraud_captured_value	fraud_count_capture_pct	fraud_value_capture_pct	legit_affected_count	legit_affected_value	legit_count_affected_pct	legit_value_affected_pct	total_txns_flagged_pct	total_value_flagged_pct
+Threshold A: Amount > 200K	1673570	877381191941.2195	5471	11833542594.160002	66.61	98.15	1668099	865547649347.0602	26.25	76.44	26.3	76.67
+Threshold B: TRANSFER/CASH_OUT > 200K	1197669	728770165956.4916	5471	11833542594.159996	66.61	98.15	1192198	716936623362.3319	18.76	63.31	18.82	63.68
+Threshold C: TRANSFER > 100K	470866	482173709416.16064	3255	6030915683.97	39.63	50.02	467611	476142793732.1905	7.36	42.05	7.4	42.13
