@@ -1,0 +1,71 @@
+04_threshold_analysis.txt
+
+Phase 5 — Threshold and Review Logic
+
+Objective
+This phase evaluates practical review thresholds to determine how much fraud could be captured through rule-based review while estimating the impact on legitimate transaction volume.
+
+Candidate Thresholds
+Three candidate thresholds were tested:
+
+1. Threshold A: review all transactions above 200K
+2. Threshold B: review TRANSFER and CASH_OUT transactions above 200K
+3. Threshold C: review TRANSFER transactions above 100K
+
+Results
+
+Threshold A: All transactions above 200K
+- Flagged transactions: 1,673,570
+- Share of all transactions flagged: 26.30%
+- Fraud cases captured: 5,471
+- Fraud count captured: 66.61%
+- Fraud value captured: 98.15%
+- Legitimate transactions affected: 1,668,099
+- Legitimate count affected: 26.25%
+- Legitimate value affected: 76.44%
+
+This threshold captures nearly all fraud value, but it affects a very large share of legitimate activity. As a result, it is likely too broad for an efficient manual review process.
+
+Threshold B: TRANSFER and CASH_OUT above 200K
+- Flagged transactions: 1,197,669
+- Share of all transactions flagged: 18.82%
+- Fraud cases captured: 5,471
+- Fraud count captured: 66.61%
+- Fraud value captured: 98.15%
+- Legitimate transactions affected: 1,192,198
+- Legitimate count affected: 18.76%
+- Legitimate value affected: 63.31%
+
+This threshold delivers the same fraud capture as Threshold A while reducing legitimate review burden. Because fraud in this dataset is concentrated in TRANSFER and CASH_OUT activity, this rule is more targeted and more practical.
+
+Threshold C: TRANSFER above 100K
+- Flagged transactions: 470,866
+- Share of all transactions flagged: 7.40%
+- Fraud cases captured: 3,255
+- Fraud count captured: 39.63%
+- Fraud value captured: 50.02%
+- Legitimate transactions affected: 467,611
+- Legitimate count affected: 7.36%
+- Legitimate value affected: 42.05%
+
+This threshold significantly reduces review volume, but it also misses a large share of fraud. It may be useful as a narrow high-priority rule, but it is not strong enough as the main review threshold.
+
+Comparison
+Threshold A and Threshold B capture the same share of fraud cases and fraud value. However, Threshold B reduces the number of legitimate transactions affected by focusing only on the two transaction types where fraud occurs. Threshold C lowers workload further, but the reduction in fraud capture is too large.
+
+Recommendation
+The recommended rule is Threshold B: review TRANSFER and CASH_OUT transactions above 200K.
+
+This threshold provides the best balance between fraud capture and operational practicality. It captures 66.61% of fraud cases and 98.15% of fraud value while reducing unnecessary review volume compared with the broader amount-only threshold. This makes it the most practical candidate for a manual-review strategy in this dataset.
+
+Suggested Review Strategy
+Use a two-level review approach:
+
+- Primary manual review queue:
+  TRANSFER and CASH_OUT transactions above 200K
+
+- Secondary monitoring queue:
+  TRANSFER transactions above 100K, used as a narrower watchlist or escalated-risk segment rather than a full manual-review rule
+
+Conclusion
+Threshold analysis shows that effective fraud review depends on balancing fraud capture against operational burden. A targeted threshold based on transaction type and amount is more practical than a broad amount-only rule and better aligned with the observed fraud concentration in the dataset.

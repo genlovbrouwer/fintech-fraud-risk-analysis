@@ -1,0 +1,40 @@
+03_risk_segmentation.txt
+
+Phase 4 — Risk Segmentation
+
+Objective
+This phase analyzes fraud concentration across transaction segments to identify where risk is highest and which transaction conditions are most associated with fraudulent activity.
+
+Method
+Fraud risk was segmented across:
+- transaction type
+- transaction amount band
+- origin account balance band
+- combinations of type, amount band, and balance band
+
+Key Findings
+
+1. Fraud is concentrated in only two transaction types.
+Fraud appears only in TRANSFER and CASH_OUT transactions. TRANSFER has the highest fraud rate at 0.7688%, compared with 0.1840% for CASH_OUT. No fraud was observed in CASH_IN, PAYMENT, or DEBIT transactions.
+
+2. High-value transactions carry the largest fraud exposure.
+The 200K+ amount band has the highest fraud rate at 0.3269% and the highest fraud value at 11.83B. This indicates that fraud becomes more material as transaction size increases.
+
+3. Fraud risk is highest among accounts with large starting balances.
+The 100K+ origin balance band has the highest fraud rate at 0.3835%, far above lower balance groups. This suggests fraudulent behavior is more likely in transactions involving higher-value origin accounts.
+
+4. Fraud is driven by a small number of high-impact segments.
+TRANSFER + 200K+ accounts for 33.36% of all fraud cases, while CASH_OUT + 200K+ accounts for 33.25%. Together, these two segments explain roughly two-thirds of total fraud.
+
+5. Combination analysis shows the strongest risk patterns.
+The highest fraud-rate segments are found when transaction type, amount, and balance are considered together. Examples include:
+- TRANSFER + 1K-10K amount + 1K-10K origin balance: 24.72% fraud rate
+- TRANSFER + 100K-200K amount + 100K+ origin balance: 7.33%
+- TRANSFER + 200K+ amount + 100K+ origin balance: 5.59%
+- CASH_OUT + 200K+ amount + 100K+ origin balance: 2.67%
+
+Business Interpretation
+Fraud risk in this dataset is not broad-based. It is concentrated in specific outbound transaction flows, especially transfers and cash-outs, and becomes materially more severe in high-value transactions. The strongest risk patterns emerge when multiple conditions occur together, particularly large transfer or cash-out amounts combined with high origin balances. These findings suggest transaction monitoring should prioritize high-value transfers and cash-outs, especially when initiated from well-funded accounts.
+
+Conclusion
+The segmentation analysis shows that fraud is best understood through combinations of transaction type, transaction value, and account balance context. These segment-level insights provide the basis for targeted monitoring rules and form the foundation of the second dashboard page.

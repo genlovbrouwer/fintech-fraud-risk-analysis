@@ -1,0 +1,72 @@
+05_monitoring_metrics.txt
+
+Phase 6 — Monitoring Framework
+
+Objective
+The purpose of this phase is to define a practical weekly monitoring framework that a fraud or risk team could use to track exposure, detect changes in fraud patterns, and assess whether the current review strategy remains effective.
+
+Weekly Metrics to Monitor
+
+1. Total Transactions
+This metric provides the weekly transaction baseline and helps distinguish changes in fraud volume from changes in overall activity.
+
+2. Total Transaction Value
+This shows the total monetary exposure processed each week and helps identify periods with unusually high-value activity.
+
+3. Fraud Count
+This tracks the number of detected fraudulent transactions and provides a direct view of weekly fraud activity.
+
+4. Fraud Value
+This tracks the financial impact of fraud and is important because a small number of cases may still represent high monetary loss.
+
+5. Fraud Rate
+Fraud rate should be monitored weekly as the main normalized measure of risk. It is more informative than fraud count alone because it adjusts for total transaction volume.
+
+6. Fraud Rate by Transaction Type
+Fraud in this dataset is concentrated in TRANSFER and CASH_OUT activity, so weekly fraud rates for these transaction types should be tracked closely.
+
+7. Transactions Above Review Threshold
+The team should monitor the weekly count and value of TRANSFER and CASH_OUT transactions above 200K, since this is the recommended primary review threshold.
+
+8. Review Queue Volume
+This measures how many transactions are entering the manual review process each week and helps assess whether the current review strategy is operationally manageable.
+
+9. Fraud Captured by Threshold
+The team should track how much fraud count and fraud value is being captured by the selected threshold to confirm that the rule remains effective over time.
+
+10. Legitimate Transactions Affected by Threshold
+This metric shows how much normal activity is being pushed into review and helps balance fraud control against operational burden and customer friction.
+
+Alert Conditions
+
+1. Weekly Fraud Rate Spike
+Trigger an alert when the weekly fraud rate rises materially above the recent baseline, such as more than 20% above the prior four-week average.
+
+2. Transfer Fraud Spike
+Trigger an alert when the fraud rate or fraud count for TRANSFER transactions rises sharply versus recent weeks.
+
+3. Cash-Out Fraud Spike
+Trigger an alert when CASH_OUT fraud count or fraud value increases materially week over week.
+
+4. High-Value Review Surge
+Trigger an alert when the volume of TRANSFER and CASH_OUT transactions above 200K rises sharply, as this may indicate elevated fraud activity or increased review workload.
+
+5. Fraud Value Concentration
+Trigger an alert when a very large share of fraud value is concentrated in one segment, such as high-value TRANSFER transactions, as this may indicate a focused attack pattern.
+
+6. Review Capacity Breach
+Trigger an alert when the number of transactions flagged for review exceeds the team’s operational review capacity for the week.
+
+How Leaders Should Use the Dashboard
+
+Risk Analysts
+Risk analysts should use the dashboard to identify which transaction segments are driving fraud, compare current results with recent baselines, and investigate unusual changes in high-risk categories.
+
+Fraud Operations Team
+Operations staff should use the dashboard to monitor review queue size, prioritize high-risk flagged transactions, and assess whether the review rule is creating an acceptable operational workload.
+
+Leadership and Managers
+Leaders should use the dashboard to monitor overall fraud exposure, evaluate whether the current review threshold remains effective, and decide whether staffing, controls, or review rules need to be adjusted.
+
+Conclusion
+An effective monitoring framework should combine exposure metrics, fraud metrics, threshold-performance metrics, and operational workload metrics. Together, these measures help the business detect fraud changes early, monitor the practicality of the review process, and support more informed risk management decisions.
