@@ -1,0 +1,34 @@
+Recommendations
+
+1. Prioritize TRANSFER and CASH_OUT Monitoring
+Fraud in the dataset is concentrated entirely in TRANSFER and CASH_OUT transactions. Risk monitoring, segmentation analysis, and manual review should therefore focus primarily on these two transaction types.
+
+2. Apply a Targeted Review Threshold
+The recommended review rule is to manually review TRANSFER and CASH_OUT transactions above 200K. This threshold captures 66.61% of fraud cases and 98.15% of fraud value while affecting a smaller share of legitimate transactions than a broader amount-only rule.
+
+3. Monitor High-Value Transactions Closely
+Transactions above 200K should remain a core fraud-monitoring segment because the highest amount band contributes the largest share of fraud value and a large share of total fraud cases.
+
+4. Track Higher-Balance Origin Accounts
+Transactions involving origin account balances above 100K should receive additional monitoring attention because this balance band shows the highest fraud rate in the segmentation analysis.
+
+5. Use Weekly Threshold Performance Monitoring
+The business should monitor how much fraud is captured by the selected review threshold and how much legitimate activity is affected. This ensures the rule remains effective and operationally practical over time.
+
+6. Establish Alert-Based Escalation
+The risk team should use alerts for fraud-rate spikes, increases in TRANSFER or CASH_OUT fraud, surges in high-value flagged transactions, and review queue growth. This allows faster response when fraud patterns change.
+
+7. Balance Fraud Control with Review Capacity
+A threshold is only useful if the flagged volume can be reviewed in practice. Weekly flagged transaction volume should therefore be compared with team capacity to determine whether review rules need adjustment.
+
+8. Use the Dashboard for Weekly Decision-Making
+The dashboard should be reviewed weekly by analysts and managers to monitor fraud exposure, threshold performance, and workload pressure. It should support decisions on whether to maintain, tighten, or revise review rules.
+
+9. Use a Two-Level Monitoring Approach
+The primary manual review rule should be TRANSFER and CASH_OUT transactions above 200K. A secondary watchlist can track TRANSFER transactions above 100K as a narrower risk-monitoring layer rather than a full review queue.
+
+10. Improve the Framework in Future Work
+Future enhancements could include time-based fraud trend analysis, account-level behavior analysis, repeated-customer risk patterns, anomaly scoring, or predictive models to improve fraud capture while reducing legitimate review burden.
+
+Final Recommendation
+The overall recommendation is to use a focused, threshold-based fraud-monitoring strategy centered on high-value TRANSFER and CASH_OUT activity, supported by weekly monitoring, alert conditions, and dashboard-based review of operational performance.

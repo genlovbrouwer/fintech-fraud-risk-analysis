@@ -1,0 +1,22 @@
+Findings Summary
+
+1. Fraud is concentrated in specific transaction types
+Fraud in the dataset appears only in TRANSFER and CASH_OUT transactions. TRANSFER has the highest fraud rate, while CASH_OUT is the second most risky transaction type. No fraud is observed in CASH_IN, PAYMENT, or DEBIT transactions.
+
+2. High-value transactions are the main source of fraud exposure
+Transactions above 200K account for the largest share of fraud value and a large share of total fraud cases. High-value activity is therefore the most important amount-based risk segment.
+
+3. Higher origin balances are associated with higher fraud risk
+Transactions from origin accounts with balances above 100K have the highest fraud rate among balance groups. This suggests fraud is more common in transactions involving well-funded accounts.
+
+4. Fraud is driven by a small number of high-risk combinations
+The strongest fraud segments are combinations of transaction type, amount, and balance conditions. The most important examples are high-value TRANSFER and CASH_OUT transactions, especially when origin balances are also high.
+
+5. Threshold targeting improves operational practicality
+A broad threshold of all transactions above 200K captures substantial fraud but affects too much legitimate activity. Restricting the threshold to TRANSFER and CASH_OUT above 200K delivers the same fraud capture with lower operational burden.
+
+6. A practical monitoring framework is needed
+Fraud control should not rely on one-time analysis alone. A risk team should monitor weekly fraud metrics, threshold performance, review queue size, and alert conditions tied to spikes in high-risk activity.
+
+Overall Conclusion
+The overall pattern is clear: fraud risk is concentrated rather than broad-based. The most effective fraud-control strategy is to focus monitoring and review activity on high-value TRANSFER and CASH_OUT transactions, supported by weekly threshold and exposure monitoring.

@@ -1,0 +1,11 @@
+Executive Summary
+
+This project analyzed fraud risk in a fintech transaction dataset to identify where fraud is concentrated, which transaction segments are highest risk, and what review strategy would be most practical for a fraud operations team.
+
+The analysis found that fraud is concentrated entirely in TRANSFER and CASH_OUT transactions. TRANSFER has the highest fraud rate, and high-value transactions above 200K account for the largest share of fraud exposure. Transactions involving origin account balances above 100K also show materially higher fraud risk than lower-balance groups.
+
+Segment analysis showed that fraud is not evenly distributed across the transaction system. Instead, it is concentrated in a small number of high-impact segments, especially high-value TRANSFER and CASH_OUT activity. Threshold testing showed that reviewing TRANSFER and CASH_OUT transactions above 200K captures 66.61% of fraud cases and 98.15% of fraud value while affecting a lower share of legitimate transactions than a broader amount-only rule.
+
+The recommended strategy is to use a targeted manual-review threshold for TRANSFER and CASH_OUT transactions above 200K, supported by weekly monitoring of fraud rate, fraud value, threshold performance, and review queue size. This approach provides a more practical balance between fraud capture and operational workload than a broad review rule.
+
+The project concludes that a focused, threshold-based monitoring framework can translate transaction data into clear business action. While the dataset is synthetic, the analysis demonstrates a realistic approach to fraud segmentation, review strategy design, and operational monitoring.
